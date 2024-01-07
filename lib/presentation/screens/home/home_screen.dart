@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const name = 'home_screen';
+
   const HomeScreen({super.key});
 
   @override
@@ -55,9 +57,17 @@ class _CustomListTitle extends StatelessWidget {
         color: colors.primary,
       ),
       onTap: () {
+        //navegation por go_router library con path
         context.push(menuItem.link);
+
+        //navigation por go_router library con nombre de pantalla
+        //context.pushNamed(CardsScreen.name);
+
+        //navegacion por navigation flutter
         // Navigator.of(context).push(
         //     MaterialPageRoute(builder: (context) => const ButtonsScreen()));
+
+        //navegation por router flutter
         // Navigator.pushNamed(context, menuItem.link);
       },
     );
