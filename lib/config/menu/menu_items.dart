@@ -50,4 +50,9 @@ const appMenuItem = <MenuItems>[
       subTitle: 'Pequeño tutorial indroduccion',
       link: '/tutorial',
       icon: Icons.accessible_rounded),
+  MenuItems(
+      title: 'Infinite Scrool y Pull',
+      subTitle: 'lista infinita y pull to refresh',
+      link: '/infinite',
+      icon: Icons.list_alt_rounded),
 ];
