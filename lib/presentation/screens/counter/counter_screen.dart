@@ -19,7 +19,7 @@ class _CounterView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final clickCounter = ref.watch(counterProvider);
-    final themeDark = ref.watch(themeProviderDark);
+    final themeDark = ref.watch(themeNotifierProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,9 +27,9 @@ class _CounterView extends ConsumerWidget {
         actions: [
           IconButton(
               onPressed: () {
-                ref.read(themeProviderDark.notifier).update((state) => !state);
+                ref.read(themeNotifierProvider.notifier).toggleDarkMode();
               },
-              icon: themeDark
+              icon: themeDark.isDarkMode
                   ? const Icon(Icons.dark_mode_outlined)
                   : const Icon(Icons.light_mode_outlined))
         ],
